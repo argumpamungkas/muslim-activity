@@ -35,12 +35,10 @@ class HomeViewModel(private val repositoryMuslim: RepositoryMuslim, val context:
         viewModelScope.launch {
             try {
                 if (sharedPref.getBoolean(Constant.PREF_IS_UPDATE)){
-                    Log.i("Data", "DATA UDAPTE")
                     val newKode = sharedPref.getInt(Constant.KEY_KODE)
                     val response = repositoryMuslim.fetchJadwalSholat(newKode, Constant.TANGGAL)
                     jadwal.value = response
                 } else {
-                    Log.i("JADWAL", "JADWAL SHOLAT")
                     val response =
                         repositoryMuslim.fetchJadwalSholat(Constant.KODE_KOTA, Constant.TANGGAL)
                     jadwal.value = response
@@ -55,12 +53,10 @@ class HomeViewModel(private val repositoryMuslim: RepositoryMuslim, val context:
         viewModelScope.launch {
             try {
                 if (sharedPref.getBoolean(Constant.PREF_IS_UPDATE)){
-                    Log.i("Data", "DATA UDAPTE")
                     val newKode = sharedPref.getInt(Constant.KEY_KODE)
                     val response = repositoryMuslim.fetchDetailKota(newKode)
                     kota.value = response
                 } else {
-                    Log.i("JADWAL", "DetailKota")
                     val response = repositoryMuslim.fetchDetailKota(Constant.KODE_KOTA)
                     kota.value = response
                 }
@@ -73,11 +69,9 @@ class HomeViewModel(private val repositoryMuslim: RepositoryMuslim, val context:
     fun fetchAllCity() {
         viewModelScope.launch {
             try {
-                Log.i("KOTA", "SEMUA KOTA")
                 val response = repositoryMuslim.fetchApiAllCity()
                 allCity.value = response
             } catch (e: Exception) {
-                Log.i("KOTA", "GAGAL")
                 e.printStackTrace()
             }
         }
@@ -86,6 +80,5 @@ class HomeViewModel(private val repositoryMuslim: RepositoryMuslim, val context:
     fun saveData(kode:Int){
         sharedPref.put(Constant.KEY_KODE, kode)
         sharedPref.put(Constant.PREF_IS_UPDATE, true)
-        Log.i("DATA", "BERHASIL DIUPDATE")
     }
 }

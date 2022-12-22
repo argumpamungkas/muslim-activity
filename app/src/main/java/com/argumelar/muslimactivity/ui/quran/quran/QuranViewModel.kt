@@ -18,12 +18,9 @@ class QuranViewModel(
     private val repositoryMuslim: RepositoryMuslim
 ) : ViewModel() {
 
-
     val quran by lazy { MutableLiveData<QuranResponse>() }
-    val message by lazy { MutableLiveData<String>() }
 
     init {
-//        message.value = ""
         fetchQuran()
     }
 
@@ -32,10 +29,8 @@ class QuranViewModel(
             try {
                 val response = repositoryMuslim.fetchApiQuran()
                 quran.value = response
-//                message.value = "DIPANGGIL"
             } catch (e: Exception){
                 e.printStackTrace()
-//                message.value = "Terjadi Kesalahan"
             }
         }
     }

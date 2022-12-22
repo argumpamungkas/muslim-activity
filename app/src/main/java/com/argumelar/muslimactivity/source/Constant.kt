@@ -1,5 +1,6 @@
 package com.argumelar.muslimactivity.source
 
+import android.annotation.SuppressLint
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -15,10 +16,10 @@ class Constant {
         val KEY_KODE = "KODE"
         var KODE_KOTA = 679
         private val current = Calendar.getInstance().time
-        private val day = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(current)!!
+        @SuppressLint("ConstantLocale")
+        private val day = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(current)
         var TANGGAL = day
 
-        val Channel1 = "channel1"
     }
 
 

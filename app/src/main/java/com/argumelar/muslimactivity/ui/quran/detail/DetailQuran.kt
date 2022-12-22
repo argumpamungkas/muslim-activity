@@ -31,9 +31,6 @@ class DetailQuran : AppCompatActivity() {
     private lateinit var bindingToolbar: CustomToolbarBinding
     private lateinit var bindingContent: CustomDescriptionBinding
     private val viewModel: DetailQuranViewModel by viewModel()
-    private val dataSurah by lazy {
-        intent.getSerializableExtra("recitation") as QuranModel
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,7 +81,7 @@ class DetailQuran : AppCompatActivity() {
 
                 val originalUrl = surah.data.recitation!!.full.toString()
                 val newUrl = originalUrl.replace("http", "https")
-                Log.i("URL_BARU", " url baru -> $newUrl")
+//                Log.i("URL_BARU", " url baru -> $newUrl")
 
                 binding.btnPlay.setOnClickListener {
                     viewModel.playSurah(newUrl)

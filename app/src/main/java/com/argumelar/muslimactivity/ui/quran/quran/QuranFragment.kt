@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import com.argumelar.muslimactivity.R
 import com.argumelar.muslimactivity.ui.quran.detail.DetailQuran
 import com.argumelar.muslimactivity.ui.adapter.AdapterListSurah
 import com.argumelar.muslimactivity.databinding.CustomToolbarBinding
@@ -57,8 +58,8 @@ class QuranFragment : Fragment() {
         AdapterListSurah(arrayListOf(), object : AdapterListSurah.OnAdapterListener{
             override fun onClick(qurans: QuranModel) {
                 Constant.NUMBER = qurans.number!!
-                startActivity(Intent(requireContext(), DetailQuran::class.java)
-                    .putExtra("recitation", qurans))
+                startActivity(Intent(requireContext(), DetailQuran::class.java))
+                (R.anim.slide_right)
             }
 
         })

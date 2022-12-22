@@ -16,12 +16,9 @@ class DailyViewModel(
     private val repoDaily: RepositoryMuslim
 ) : ViewModel() {
 
-
     val daily by lazy { MutableLiveData<List<DailyPrayersModel>>() }
-//    val message by lazy {MutableLiveData<String>()}
 
     init {
-//        message.value = ""
         fetchDaily()
     }
 
@@ -30,9 +27,7 @@ class DailyViewModel(
             try {
                 val response = repoDaily.fetchApiDaily()
                 daily.value = response
-//                message.value = "Dipanggil"
             } catch (e: Exception){
-//                message.value = "Kesalahan"
             }
         }
     }

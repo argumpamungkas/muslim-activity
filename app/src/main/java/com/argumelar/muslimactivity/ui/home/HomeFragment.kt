@@ -84,7 +84,7 @@ class HomeFragment : Fragment() {
             var listNamaKota = ArrayList<String>()
 
             val listReponse = it.kota
-            listReponse?.forEach { response ->
+            listReponse.forEach { response ->
                 listIdKota.add(response.id!!)
                 listNamaKota.add(response.nama)
             }
@@ -172,26 +172,32 @@ class HomeFragment : Fragment() {
                 time <= subuh -> {
                     binding.tvJamSolat.text = subuh
                     binding.tvWaktuSolat.text = "Subuh"
+                    binding.imgHeader.setImageResource(R.drawable.img_subuh)
                 }
                 time <= dzuhur -> {
                     binding.tvJamSolat.text = dzuhur
                     binding.tvWaktuSolat.text = "Dzhuhur"
+                    binding.imgHeader.setImageResource(R.drawable.img_dhuhur)
                 }
                 time <= ashar -> {
                     binding.tvJamSolat.text = ashar
                     binding.tvWaktuSolat.text = "Ashar"
+                    binding.imgHeader.setImageResource(R.drawable.img_ashar)
                 }
                 time <= maghrib -> {
                     binding.tvJamSolat.text = maghrib
                     binding.tvWaktuSolat.text = "Maghrib"
+                    binding.imgHeader.setImageResource(R.drawable.img_maghrib)
                 }
                 time <= isya -> {
                     binding.tvJamSolat.text = isya
                     binding.tvWaktuSolat.text = "Isya"
+                    binding.imgHeader.setImageResource(R.drawable.img_isya)
                 }
                 else -> {
                     binding.tvJamSolat.text = subuh
                     binding.tvWaktuSolat.text = "Subuh"
+                    binding.imgHeader.setImageResource(R.drawable.img_subuh)
                 }
 
             }

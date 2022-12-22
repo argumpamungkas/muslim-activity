@@ -36,7 +36,6 @@ class DailyPrayersFragment : Fragment() {
         binding = FragmentDailyPrayersBinding.inflate(layoutInflater, container, false)
         bindingToolbar = binding.containerToolbar
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

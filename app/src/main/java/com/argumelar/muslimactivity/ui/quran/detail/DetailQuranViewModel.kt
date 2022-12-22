@@ -38,7 +38,6 @@ class DetailQuranViewModel(
                 detailQuran.value = response
             } catch (e: Exception) {
                 e.printStackTrace()
-                Log.i("error", "ERROR")
             }
         }
     }
@@ -47,26 +46,21 @@ class DetailQuranViewModel(
         viewModelScope.launch {
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC)
             if (!mediaPlayer.isPlaying) {
-                Log.i("playSurah", "play")
                 try {
                     mediaPlayer.setDataSource(url)
                     mediaPlayer.prepare()
                     mediaPlayer.start()
-                    Log.i("playSurah", "play2")
                 } catch (e: IOException) {
                     e.printStackTrace()
-                    Log.i("playSurah", "Error play + ${play.value}")
                 }
                 play.value = 1
             } else {
-                Log.i("playSurah", "Stop")
                 try {
                     mediaPlayer.pause()
                     mediaPlayer.stop()
                     mediaPlayer.reset()
                 } catch (e: IOException) {
                     e.printStackTrace()
-                    Log.i("playSurah", "Error Stop + ${play.value}")
                 }
                 play.value = 0
             }
@@ -74,7 +68,6 @@ class DetailQuranViewModel(
                 mediaPlayer.pause()
                 mediaPlayer.stop()
                 mediaPlayer.reset()
-                Log.i("playSurah", "COMPLETE")
                 play.value = 0
             }
         }
