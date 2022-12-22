@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:title="Home"
+        android:icon="@drawable/logo_home" />
+
+    <item
+        android:id="@+id/navigation_quran"
+        android:title="Qur'an"
+        android:icon="@drawable/logo_quran" />
+
+    <item
+        android:id="@+id/navigation_daily_prayers"
+        android:title="Daily Prayers"
+        android:icon="@drawable/logo_daily" />
+
+</menu>
