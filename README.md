@@ -3,4 +3,4 @@ Api yang digunakan :
  - Al-Qur'an                    : https://github.com/rzkytmgr/quran-api
  - Doa sehari-hari              : https://doa-doa-api-ahmadramadhan.fly.dev/
  
-![image](https://user-images.githubusercontent.com/53247359/210955097-5f970369-c106-4973-96f8-ea1b4a9a9d52.png)
+![image](https://user-images.githubusercontent.com/53247359/210955210-a00a64cc-c45c-4d7f-8876-79cc4a0159bb.png)
